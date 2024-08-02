@@ -1,0 +1,295 @@
+
+.pd140-50 {
+    padding: 140px 50px;
+}
+.pd70-30 {
+    padding: 70px 30px;
+}
+
+.link-nav {
+    justify-self: right;
+}
+
+.link-nav>a{
+    text-decoration: none;
+}
+
+.desktop-menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px 50px;
+    align-items: center;
+}
+
+.desktop-menu a {
+    margin-left: 15px;
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+}
+
+.desktop-menu .link-nav a::after {
+    display: block;
+    position: absolute;
+    left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+    width: 0; /*задаём длинну линии до наведения курсора*/
+    height: 8px; /*задаём ширину линии*/
+    content: "";
+    transition: width 0.3s ease-out; /*задаём время анимации*/
+    bottom: 4px;
+    z-index: -1;
+}
+
+.desktop-menu .link-nav a:hover:after, .desktop-menu .link-nav a:focus:after {
+    width: 60%;
+}
+
+.mobile-menu {
+    position: fixed;
+    display: none;
+    align-items: center;
+    padding: 10px 50px;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    z-index: 9999999;
+    justify-content: space-between
+}
+
+.mobile-menu__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.mobile-menu__icon {
+    display: block;
+    position: relative;
+    background:#f8d40b;
+    width: 90%;
+    height: 4px;
+    transition: 0.4s;
+}
+
+.mobile-menu__icon::after, .mobile-menu__icon::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #f8d40b;
+    width: 100%;
+    height: 4px;
+    transition: 0.4s;
+}
+
+.mobile-menu__icon::after {
+    top: 8px;
+}
+
+.mobile-menu__icon::before {
+    top: -8px;
+}
+
+.mobile-menu__container {
+    position: fixed;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 0;
+    opacity: 1;
+    transition: 0.5s;
+    transition-delay: 0.2s;
+    overflow: hidden;
+    background-color: #333;
+    flex-flow: column
+}
+
+.mobile-menu__list {
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0px;
+    border-bottom: 1px solid #f8d50b42;
+}
+
+.mobile-menu__item {
+    font-size: 18px;
+    padding-bottom: 15px;
+}
+
+.mobile-menu__link {
+    text-decoration: none;
+    color: #ffffff;
+}
+.mobile-menu__link:hover {
+    color: #f8d40b;
+}
+
+.mobile-menu__checkbox {
+    display: none;
+}
+/**/
+
+.mobile-menu__checkbox:checked ~ .mobile-menu__nav {
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.mobile-menu__checkbox:checked ~ .mobile-menu__container {
+    height: 100%;
+    transition-delay: 0s;
+}
+
+.mobile-menu__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon {
+    background: transparent;
+}
+
+.mobile-menu__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::before, .mobile-menu__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::after {
+    top: 0;
+}
+
+.mobile-menu__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::after {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.mobile-menu__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::before {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+
+@media (max-width: 1040px) {
+    .mobile-menu {
+        display: flex;
+        background-color: #333
+    }
+
+    .desktop-menu, .hero-top-menu {
+        display: none!important;
+    }
+}
+@media (max-width: 600px) {
+    .mobile-menu {
+        padding: 10px;
+    }
+}
+
+/* form */
+
+.form-container {
+    margin: 100px auto;
+    border-radius: 15px;
+    background-color: #333;
+    padding: 20px 20px 30px 20px;
+    text-align: center;
+    max-width: 800px
+}
+.form-container label,.form-container a,.form-container h2{
+    color: #fff
+}
+.form-inputs-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+.form-container h2{
+    margin: 10px;
+}
+
+  .form-input {
+    margin-top: 20px;
+    padding: 14px 24px;
+    border: none;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+  .form-link {
+    background-color: #333;
+    margin-top: 20px;
+    padding: 14px 24px;
+    border-radius: 5px;
+    color: #fff;
+  }
+  
+  
+  .form-input {
+    outline: none !important;
+    border: 1px solid #333;
+    width: 200px;
+  }
+  .form-input:active, .form-input:hover, .form-input:target, .form-input:focus {
+    outline: none !important;
+  }
+  
+  .form-link {
+    outline: none !important;
+    border: none;
+    height: 50px;
+    background-color: #f8d40b;
+    color: #333
+  }
+  .form-link:hover {
+    background-color: #f8d50bbb;
+  }
+  .form-link:active, .form-link:hover, .form-link:target, .form-link:focus {
+    outline: none !important;
+    border: none;
+  }
+  
+  .form-link-container {
+    margin-top: 10px;
+  }
+  @media (max-width: 950px) {
+    .form-container {
+        margin: 100px 50px
+    }
+}
+  @media (max-width: 750px) {
+    .form-container {
+        margin: 100px 10px
+    }
+    .form-inputs-container {
+      display: flex;
+      align-items: unset;
+      gap: 10px;
+      flex-flow: column;
+    }
+  
+    .form-input {
+      width: auto;
+    }
+  
+    .modal__container {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .form-container {
+        margin: 100px 10px
+    }
+  }
+
+  @media (max-width: 550px) {
+    .form-inputs-container {
+    text-align: center;
+  }
+  .form-input, .form-link {
+    width: auto;
+  }
+  }

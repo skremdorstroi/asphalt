@@ -1,0 +1,25 @@
+article {
+    margin: 100px auto;
+    max-width: 700px
+}
+article img {
+    width: auto
+}
+@media (max-width: 1040px) {
+    .logo-container * {
+        color: #fff
+    }
+}
+@media (max-width: 800px) {
+    article {
+        margin: 100px 50px;
+    }
+    article img {
+        width: 100%
+    }
+}
+@media (max-width: 600px) {
+    article {
+        margin: 100px 10px;
+    }
+}

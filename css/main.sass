@@ -1,0 +1,275 @@
+$base-color: #f8d40b
+$hero-screen-font: #fff
+$font-color: #333
+
+.form-container
+  display: none
+
+*
+  font-family: 'Jost', sans-serif
+  line-height: 1.4
+  color: $font-color
+a
+  text-decoration: none
+h1
+  font-size: 40px
+
+h2
+  font-size: 30px
+  
+h3
+  font-size: 20px
+li
+  margin-top: 10px
+
+.hero-container
+  height: 100vh
+  background: url("../img/hero2.webp") no-repeat 50% 50%
+  background-size: cover
+  *
+    color: $hero-screen-font
+
+.hero-info-container
+  padding: 100px 50px
+  width: 70vw
+  p
+    font-size: 20px
+.phone-info-container
+  margin: 50px 50px
+  display: none
+
+.hero-top-menu
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 10px 50px 10px 50px
+    .phone
+        display: flex
+        flex-flow: column
+        margin-right: 25px
+        a
+            font-size: 18px
+            align-self: flex-end
+            letter-spacing: 2px
+        p
+            display: flex
+            align-items: flex-end
+            margin: 0
+            font-size: 14px
+    // .phone-additional
+    //     margin-right: 25px
+    //     display: flex
+    //     flex-flow: column wrap
+    //     justify-items: center
+    //     a
+    //         font-size: 22px
+    //         &:nth-child(2)
+    //             margin: 5px 0
+    //             align-self: flex-end
+
+
+// social
+.hero-social
+    margin-right: 20px
+.viber img
+    padding: 10px
+    &:hover
+        border-radius: 5px
+        background-color: #7360f2
+.whapp img
+    padding: 10px
+    &:hover
+        border-radius: 5px
+        background-color: #43d854
+.tg img
+    padding: 10px
+    &:hover
+        border-radius: 5px
+        background-color: #28a8ea
+
+.viber-f img
+    padding: 5px
+    border-radius: 5px
+    background-color: #7360f2
+.whapp-f img
+    padding: 5px
+    border-radius: 5px
+    background-color: #43d854
+.tg-f img
+    padding: 5px
+    border-radius: 5px
+    background-color: #28a8ea
+
+.callback
+    a
+        padding: 14px 40px
+        border-radius: 5px
+        font-size: 18px
+        background-color: $base-color
+        color: $font-color
+
+.top-menu-info
+  display: flex
+  align-items: center
+.logo-container
+  display: flex
+  align-items: center
+  span
+    font-size: 20px
+  p
+    margin-left: 10px
+    font-size: 14px
+    width: 180px
+
+.desktop-menu a
+  position: relative
+  padding-bottom: 3px
+  &::after
+    content: ""
+    position: absolute
+    width: 100%
+    transform: scaleX(0)
+    height: 1.5px
+    bottom: 0
+    left: 0
+    background-color: #f8d50b59
+    transform-origin: bottom right
+    transition: transform 0.25s ease-out
+  &:hover
+    &::after
+      transform: scaleX(1.1)
+      transform-origin: bottom left
+
+.price-container
+  margin: 50px
+  
+// about
+.about-container
+  margin: 100px 50px
+.about
+  display: grid
+  grid-template-columns: 1fr 1fr
+  gap: 20px
+  justify-content: center
+.about-img
+  background: url("../img/tre.webp") no-repeat 50% 50%
+  background-size: cover
+footer
+  padding: 10px 50px
+  background-color: $font-color
+  display: flex
+  justify-content: space-between
+  align-items: center
+  *
+    color: $hero-screen-font
+
+
+
+// table
+.table-responsive
+  min-height: .01%
+  overflow-x: auto
+
+.table
+  width: 100%
+  border-collapse: collapse
+  border-spacing: 0
+
+  td, th
+    background-color: #F3F5EF
+    border: 1px solid #bbb
+    color: #333
+    font-size: 14px
+    padding: 10px
+
+  tr:nth-child(even) td
+    background-color: #F8D40B17
+
+  th
+    background-color: #333
+    color: #fff
+    font-size: 18px
+
+  tr
+    &.even:hover td, &:hover td
+      color: #333
+      background-color: #FFFBEF
+
+.tg-bf
+  font-weight: 700
+
+.tg-it
+  font-style: italic
+
+.tg-left
+  text-align: left
+
+.tg-right
+  text-align: right
+
+.tg-center
+  text-align: center
+
+.table-price
+  min-width: 80px
+@media screen and (max-width: 1040px)
+  .phone-info-container
+    text-align: center
+    display: block
+    a
+      font-size: 40px
+    p
+      font-size: 20px
+
+@media screen and (max-width: 820px)
+  .hero-container
+    min-height: 100vh
+  .hero-info-container
+    text-align: center
+    width: auto
+  .about
+    grid-template-columns: 1fr
+  .about-img
+    display: none
+
+  
+@media screen and (max-width: 600px)
+  .hero-container
+    height: auto
+    padding: 20px 0
+  .about-container
+    margin: 100px 10px
+  .hero-info-container
+    padding: 100px 10px 50px 10px
+    margin: 0 auto
+  .phone-info-container
+    margin: 50px 10px
+
+  
+  .price-container
+    margin: 10px
+  h1
+    font-size: 35px
+  h2
+    font-size: 30px
+  h3
+    font-size: 25px
+  footer
+    padding: 50px 10px
+    flex-flow: row wrap
+    justify-content: center
+    gap: 10px
+
+
+@media screen and (max-width: 460px)
+  .table td, .table th
+    font-size: 13px
+  .table-price
+    min-width: 50px
+// table end
+
+@media screen and (max-width: 380px)
+  .logo-container p
+    margin-left: 5px
+    font-size: 12px
+    width: 155px
